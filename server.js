@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var path = require("path");
 var PORT = process.env.PORT || 3000
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
