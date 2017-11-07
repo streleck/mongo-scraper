@@ -21,7 +21,11 @@ function displayBoxes(){
 			newsCard += "<button class='note-submit' data='article" + i + "' data-id='" + data[i]._id + "'>Submit</button></div></div>"
 
 			$("#article-dump").append(newsCard);
-
+		};
+		if(data.length == 0){
+			setTimeout(function(){
+				displayBoxes();
+			}, 1000);
 		};
 	});
 };
@@ -40,6 +44,8 @@ $("#clearAll").on("click", function(){
 				console.log("something bad");
 			});
 		});
+		location.reload();
+
 	}
 });
 
@@ -92,13 +98,14 @@ $("#article-dump").on("click", ".note-delete", function(){
 
 function noteDisplay(article){
 	console.log("article: " + article);
+	$("#" + $(article).attr("data") + "-note-dump").html("");
 	$("#" + $(article).attr("data") + "-note-box").css("display","block");
 	var articleId = $(article).attr("data-id");
 	$.get("/notes/" + articleId, function(data){
 		if (data.length>0){
 			console.log(data);
 			for(var i=0;i<data[0].notes.length;i++){
-				$("#" + $(article).attr("data") + "-note-dump").append('<div id="' + data[0].notes[i]._id + '" class="individual-note"><p>"' + data[0].notes[i].body + '"</p><h5>Submitted by: ' + data[0].notes[i].author + '</h5><button class="note-delete" data="' + article + '" data-id="' + data[0].notes[i]._id + '">delete</button></div>');
+				$("#" + $(article).attr("data") + "-note-dump").append('<div id="' + data[0].notes[i]._id + '" class="individual-note"><p class="note-body">"' + data[0].notes[i].body + '"</p><h5>Submitted by: ' + data[0].notes[i].author + '</h5><button class="note-delete" data="' + article + '" data-id="' + data[0].notes[i]._id + '">delete</button></div>');
 			};
 		};
 	});
