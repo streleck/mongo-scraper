@@ -34,6 +34,6 @@ require("./routes/get-routes.js")(app);
 
 
 // Listen on port 3000
-app.listen(PORTg, function() {
+app.listen(PORT, function() {
   console.log("App running on port 3000!");
 });
