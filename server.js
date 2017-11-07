@@ -3,7 +3,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-
+var PORT = process.env.port || 3000
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -34,6 +34,6 @@ require("./routes/get-routes.js")(app);
 
 
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log("App running on port 3000!");
 });
