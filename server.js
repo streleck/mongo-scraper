@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 // Make public a static dir
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 require("./routes/scraper-routes.js")(app);
