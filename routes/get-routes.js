@@ -5,7 +5,7 @@ var Article = require("../models/Article.js");
 module.exports = function(app){
 	
 	app.get("/", function(req, res) {
-	  res.sendFile("../Public/index.html");
+	  res.sendFile(__dirname + '/index.html');
 	});
 
 	app.get("/articles", function(req, res) {
