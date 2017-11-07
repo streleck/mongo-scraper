@@ -1,0 +1,38 @@
+body{
+	background-image: url("./green.jpg");
+	background-size: cover;
+}
+h1{
+	color: #86b326;
+	margin: 0 0 0 20px;
+	text-shadow: 1px 1px #888
+}
+#banner{
+	font-size: 20px;
+	background-image: url("./dark.jpg");
+	padding: 10px;
+}
+#title-text{
+	display: inline-block;
+}
+#clearAll{
+	border: 1px solid #333;
+	background-color: black;
+	color: green;
+	float:right;
+}
+.card{
+	background-image: url("./white.jpg");
+	border: 2px inset #AAA;
+	margin: 30px;
+	padding: 20px;
+}
+.note-field{
+	display:none;
+}
+textarea{
+	display: block;
+}
+p{
+	color: red;
+}
