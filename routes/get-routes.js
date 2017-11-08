@@ -6,7 +6,7 @@ var path = require("path");
 module.exports = function(app){
 	
 	app.get("/", function(req, res) {
-	  res.sendFile('/app/public/index.html');
+	  res.sendFile('/app/Public/index.html');
 	});
 
 	app.get("/articles", function(req, res) {
