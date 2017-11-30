@@ -1,5 +1,5 @@
 body{
-	background-image: url("./green.jpg");
+	background-image: url("../images/green.jpg");
 	background-size: cover;
 }
 h1{
@@ -9,7 +9,7 @@ h1{
 }
 #banner{
 	font-size: 20px;
-	background-image: url("./dark.jpg");
+	background-image: url("../images/dark.jpg");
 	padding: 10px;
 }
 #title-text{
@@ -22,7 +22,7 @@ h1{
 	float:right;
 }
 .card{
-	background-image: url("./white.jpg");
+	background-image: url("../images/white.jpg");
 	border: 2px inset #AAA;
 	margin: 30px;
 	padding: 20px;
