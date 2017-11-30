@@ -23,7 +23,7 @@ h1{
 }
 .card{
 	background-image: url("../images/white.jpg");
-	max-width: 600px;
+	max-width: 800px;
 	border: 2px inset #AAA;
 	margin: 30px;
 	padding: 20px;

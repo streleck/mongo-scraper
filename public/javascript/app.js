@@ -14,9 +14,9 @@ function displayBoxes(){
 			newsCard += "<div class='note-field' id='article" + i + "-note-box'>";
 			newsCard += "<h3>Notes:</h3>";
 			newsCard += "<div id='article" + i + "-note-dump'></div>";
-			newsCard += "<h4>Add Note:</h4>";
-			newsCard += "<span>Name:<input type='text' id='article" + i + "-note-author'></span><br>";
-			newsCard += "<textarea id='article" + i + "-note-text' rows='4' cols='50'></textarea>";
+			newsCard += "<h3>Add a Note!</h3>";
+			newsCard += "<input placeholder='your name' class='noteName' type='text' id='article" + i + "-note-author'><br>";
+			newsCard += "<textarea placeholder='your message' class='noteField' id='article" + i + "-note-text' rows='4' cols='50'></textarea>";
 			newsCard += "<button class='note-submit' data='article" + i + "' data-id='" + data[i]._id + "'>Submit</button></div></div>"
 
 			$("#article-dump").append(newsCard);
