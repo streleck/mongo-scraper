@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 function displayBoxes(){
 	$.get("/articles", function(data){
-		console.log(data);
 		for(var i=0;i<data.length;i++){
 
 			var newsCard = "<div class='card' id='article" + i + "'>";
@@ -53,7 +52,7 @@ $("#clearAll").on("click", function(){
 $("#article-dump").on("click", ".note-btn", function(){
 	var divId = "#" + $(this).attr("data") + "-note-box";
 	if ($(divId).css("display") == "block"){
-		$(divId).css("display","none");
+		$(divId).slideUp();
 		$("#" + $(this).attr("data") + "-note-dump").html("");
 	}
 	else{
@@ -82,31 +81,31 @@ $("#article-dump").on("click", ".note-submit", function(){
 	var currentURL = window.location.origin;
   $.post(currentURL + "/savenote", noteEntry,
     function(data){
-  }).then(noteDisplay(thisBox));
+  }).then(function(){
+  	noteDisplay(thisBox);
+	});
 });
 
 //delete note:
 $("#article-dump").on("click", ".note-delete", function(){
 	var noteId = $(this).attr("data-id");
 	$("#" + noteId).html("");
-	$.post("/deletenote", {id: noteId}, function(data){
-		console.log($(this).attr("data"))
-		// noteDisplay($(this).attr("data"));
-	});
+	$.post("/deletenote", {id: noteId}, function(data){});
 });
 
 
 function noteDisplay(article){
-	console.log("article: " + article);
 	$("#" + $(article).attr("data") + "-note-dump").html("");
-	$("#" + $(article).attr("data") + "-note-box").css("display","block");
+	$("#" + $(article).attr("data") + "-note-box").slideDown();
 	var articleId = $(article).attr("data-id");
 	$.get("/notes/" + articleId, function(data){
-		if (data.length>0){
-			console.log(data);
+		if (data[0].notes.length>0){
 			for(var i=0;i<data[0].notes.length;i++){
 				$("#" + $(article).attr("data") + "-note-dump").append('<div id="' + data[0].notes[i]._id + '" class="individual-note"><p class="note-body">"' + data[0].notes[i].body + '"</p><h5>Submitted by: ' + data[0].notes[i].author + '</h5><button class="note-delete" data="' + article + '" data-id="' + data[0].notes[i]._id + '">delete</button></div>');
 			};
-		};
+		}
+		else{
+			$("#" + $(article).attr("data") + "-note-dump").html("(no notes to display)");
+		}
 	});
 };

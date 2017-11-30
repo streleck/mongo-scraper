@@ -10,7 +10,7 @@ mongoose.Promise = Promise;
 
 //connect to mongoose
 mongoose.connect("mongodb://heroku_69zr21nh:ij6fa2cif86hcctolcou6qeiu6@ds149905.mlab.com:49905/heroku_69zr21nh");
-// mongoose.connect("mongodb://localhost/mongoscraper");
+mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
