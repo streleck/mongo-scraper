@@ -4,12 +4,13 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 3000;
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 //connect to mongoose
-mongoose.connect("mongodb://heroku_69zr21nh:ij6fa2cif86hcctolcou6qeiu6@ds149905.mlab.com:49905/heroku_69zr21nh");
+// mongoose.connect("mongodb://heroku_69zr21nh:ij6fa2cif86hcctolcou6qeiu6@ds149905.mlab.com:49905/heroku_69zr21nh");
+mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
