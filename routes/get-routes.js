@@ -36,7 +36,7 @@ module.exports = function(app){
 	});
 
 	app.get("/cleardb", function(req, res) {
-		 
+		console.log('this happened');
 		Article.remove({}).exec(function(error,doc) {
 	    // Log any errors
 	    if (error) {
