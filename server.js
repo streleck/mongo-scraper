@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 3000;
 mongoose.Promise = Promise;
 
 //connect to mongoose
-mongoose.connect("mongodb://ds021701.mlab.com:21701/heroku_spscw08h");
+mongoose.connect("mongodb://streleck:blackoceanparkinglots6@ds021701.mlab.com:21701/heroku_spscw08h");
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 console.log(db);
